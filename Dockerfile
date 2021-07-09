@@ -63,5 +63,9 @@ RUN debuginfo-install --assumeyes --tolerant libutempter-1.1.6-4.el7.x86_64
 RUN debuginfo-install --assumeyes --tolerant qrencode-libs-3.4.1-3.el7.x86_64
 RUN debuginfo-install --assumeyes --tolerant sqlite-3.7.17-8.el7.x86_64
 
+COPY scripts/generate_tars.sh /opt/app-root/src/generate_tars.sh
+RUN chmod u+x /opt/app-root/src/generate_tars.sh
+RUN /opt/app-root/src/generate_tars.sh
+
 USER 1001
 
